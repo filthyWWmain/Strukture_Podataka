@@ -61,7 +61,7 @@ int input_date_of_birth() {
 	int br_pokusaja = 0;
 
 	while (is_input_ok != true && br_pokusaja < 3) {
-		printf("\n\tInput date_of_birth: ");
+		printf("\n\tInput year_of_birth: ");
 		scanf(" %s", input);
 		br_pokusaja = br_pokusaja + 1;
 		date_of_birth = 0;
