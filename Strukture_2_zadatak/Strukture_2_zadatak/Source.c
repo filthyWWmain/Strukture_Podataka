@@ -9,7 +9,7 @@
 //kad dodaje element na kraj a lista je prazna 
 //kad ide bristali element a taj element je prvi
 //kad input u menu funkciji broj ili string umisto char puca
-// za delete brise samo prvoga po ton prezimenu i ne  porvjerava ime i date_of_birth
+//za delete brise samo prvoga po ton prezimenu i ne  porvjerava ime i date_of_birth
 
 
 #define Prolaz_predmeta true
@@ -23,7 +23,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include<ctype.h>
+#include <ctype.h>
+#include <math.h>
 
 struct _person;
 typedef struct _person* personP;
@@ -38,7 +39,7 @@ typedef struct _person {
 char* input_firstname() {
 
 	char firstname[MAX_LENGTH] = { 0 };
-	printf("\n\tinput firstname:  ");
+	printf("\n\tInput firstname:  ");
 	scanf(" %s", firstname);
 
 	return firstname;
@@ -47,19 +48,48 @@ char* input_firstname() {
 char* input_lastname() {
 
 	char lastname[MAX_LENGTH] = { 0 };
-	printf("\n\tinput lastname:  ");
+	printf("\n\tInput lastname:  ");
 	scanf(" %s", lastname);
 
 	return lastname;
 }
 
 int input_date_of_birth() {
-
+	char input[MAX_LENGTH] = { 0 };
 	int date_of_birth = 0 ;
-	printf("\n\tinput date_of_birth:  ");
-	scanf(" %d", &date_of_birth);
+	bool is_input_ok = false;
+	int br_pokusaja = 0;
 
+	while (is_input_ok != true && br_pokusaja < 3) {
+		printf("\n\tInput date_of_birth: ");
+		scanf(" %s", input);
+		br_pokusaja = br_pokusaja + 1;
+		date_of_birth = 0;
+		for (int i = 0; i < 4; i++) {
+
+			if (isdigit(input[i]) != 0) {
+				date_of_birth = date_of_birth + pow(10, 3 - i) * (input[i] - '0');
+				
+				is_input_ok = true;//stavi da je true svaki put i onda ako je i nakon 4. puta true znaci da su svi uneseni znakovi brojevi
+			}
+			else {
+				is_input_ok = false;
+				printf("\n\tInput must be a number between 1900 and 2023\n");
+				break;
+			}
+			if ((date_of_birth < 1900 || date_of_birth > 2023) && i == 3) {
+				printf("\n\tInput must be a number between 1900 and 2023\n");
+				is_input_ok = false;
+			}
+		
+		}
+	}
+	if(br_pokusaja == 3 && is_input_ok == false){
+		printf("\n\tSmotan si ko sajla. Staviti cu ti da si 2002. godiste\n");
+		date_of_birth = 2002;
+	}
 	return date_of_birth;
+	
 }
 
 
@@ -138,7 +168,7 @@ int find_by_lastname(personP head) {
 		head = head->next;
 	}
 	printf("\n*********************************************************\n\n");
-	printf(" Person found : %s \t %s \t %s", head->firstname, head->lastname, head->date_of_birth);
+	printf(" Person found : %s \t %s \t %d", head->firstname, head->lastname, head->date_of_birth);
 	printf("\n\n*********************************************************\n");
 	return 0;
 }
