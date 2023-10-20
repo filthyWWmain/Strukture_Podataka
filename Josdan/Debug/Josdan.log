@@ -1,0 +1,68 @@
+﻿  Zadatak_2.c
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(36,8): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(38,18): warning C4047: 'return': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(45,8): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(47,17): warning C4047: 'return': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(54,8): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(56,22): warning C4047: 'return': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(67,18): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(67,9): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(68,17): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(68,9): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(69,22): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(69,9): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,45): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,34): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,56): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,47): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,86): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,76): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,96): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,88): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,103): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,132): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,117): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,147): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(71,134): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,36): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,25): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,47): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,38): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,77): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,67): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,87): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,79): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,94): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,123): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,108): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,138): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(78,125): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(80,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(80,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(80,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 3 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(106,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(106,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(106,10): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 3 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(121,21): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(121,10): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(122,20): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(122,10): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(123,25): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(123,10): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(148,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(148,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(148,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 3 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(177,17): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(177,9): warning C4024: 'strcpy': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(179,30): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(179,20): warning C4024: 'strcmp': different types for formal and actual parameter 1
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(179,40): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char *[128]'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(179,32): warning C4024: 'strcmp': different types for formal and actual parameter 2
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(189,9): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(189,9): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(189,9): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 3 has type 'char **'
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(38): warning C4172: returning address of local variable or temporary: firstname
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(56): warning C4172: returning address of local variable or temporary: date_of_birth
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(47): warning C4172: returning address of local variable or temporary: lastname
+C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Josdan\Zadatak_2.c(109): warning C4716: 'free_the_memory': must return a value
+  Josdan.vcxproj -> C:\Users\MSGW FILIGHT\Desktop\strukture_podataka\Josdan\Debug\Josdan.exe
