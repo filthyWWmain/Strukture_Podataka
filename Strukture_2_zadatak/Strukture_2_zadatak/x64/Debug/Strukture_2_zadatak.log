@@ -1,6 +1,7 @@
 ﻿  Source.c
-C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(71,70): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(54): warning C4172: returning address of local variable or temporary: lastname
-C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(45): warning C4172: returning address of local variable or temporary: firstname
-C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(229): warning C4716: 'free_the_memory': must return a value
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(96,64): warning C4244: 'function': conversion from 'size_t' to 'double', possible loss of data
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(96,84): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(320,25): warning C4047: 'return': 'personP' differs in levels of indirection from 'int'
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(71): warning C4172: returning address of local variable or temporary: firstname
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\Strukture_2_zadatak\Source.c(80): warning C4172: returning address of local variable or temporary: lastname
   Strukture_2_zadatak.vcxproj -> C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_2_zadatak\x64\Debug\Strukture_2_zadatak.exe
