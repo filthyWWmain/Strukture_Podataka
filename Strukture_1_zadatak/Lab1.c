@@ -16,7 +16,6 @@ typedef struct _student {
 	StudentP next;
 }Student;
 
-// stvara novi struct student te postavlja njegove vrijednosti na vrijednosti poslane u funkciju te vraca novonastali element
 StudentP create_node(char* firstname, char* lastname, int points) {
 	StudentP q = NULL;
 	q = (StudentP)malloc(sizeof(Student));
@@ -25,57 +24,75 @@ StudentP create_node(char* firstname, char* lastname, int points) {
 	q->points = points;
 	q->next = NULL;
 	return q;
+
 }
-//jednadzba prima head i novi element. novi element stavljamo na misto head a stari head izad njega. Tako da je svaki novi clan head element funkcije. Fukcija vraca novi head
-StudentP Input_in_list(StudentP head, StudentP q){
+StudentP Input_in_list(StudentP head, StudentP q) {
 	if (head == NULL)
 		return q;
-	else{
+	else {
 		q->next = head;
 		return q;
 	}
 }
-
 StudentP read_from_file(StudentP head) {
 
-	char* firstname[MAX_LENGTH] = { 0 };
-	char* lastname[MAX_LENGTH] = { 0 };
-	int points = 0;
+	char firstname[MAX_LENGTH] = { 0 };
+	char lastname[MAX_LENGTH] = { 0 };
+	int points, test = 0;
 	FILE* fp = NULL;
 
-	fp = fopen("filename", "r");
-	if (fp == NULL)
+	fp = fopen("input.txt", "r");
+	if (fp == NULL) {
+		perror("\njebo ga file\n");
 		return FILE_NOT_OPENED;
-
-	while (!fp) {
-		fscanf(fp, firstname, lastname, &points);
-		head = Input_in_list(head,create_node(firstname, lastname, points));
 	}
-	fclose(fp);
+	else {
+		while (fscanf(fp, " %s %s %d", firstname, lastname, &points) != EOF) {
+
+			head = Input_in_list(head, create_node(firstname, lastname, points));
+
+		}
+		fclose(fp);
+	}
+
+
 
 	return head;
 }
+//tebra--- :)
+double relativ_grade(int points) {
+	double relativ = 0.0;
+	relativ = points / 50.0 * 100.0;
+	return relativ;
+}
+
 // prints all values of elements in list
-int print_all_elements(studentp head){
-	while (head != null) {
+int print_all_elements(StudentP head) {
+	while (head != NULL) {
 		printf(" %s %s %d %f \n", head->firstname, head->lastname, head->points, relativ_grade(head->points));
 		head = head->next;
 	}
 	return 0;
 }
-double relativ_grade(int points) {
-	double relativ = 0.0;
-	relativ = points / 50.0 * 100;
-	return relativ;
+
+int free_the_memory(StudentP head) {
+	StudentP Temp = NULL;
+	while (head != NULL) {
+		Temp = head;
+		head = head->next;
+		printf("\n brisemo : %s %s %d", Temp->firstname, Temp->lastname, Temp->points);
+		free(Temp);
+	}
 }
 
-
 int main() {
+
 	StudentP head = NULL;
 
 	head = read_from_file(head);
-
 	print_all_elements(head);
+	free_the_memory(head);
+
 
 	return 0;
 }
