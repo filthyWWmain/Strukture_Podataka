@@ -75,7 +75,7 @@ int insert_first(Position head, Position new_node) {
 int read_from_file(Position head, double* result) {
 
 	char buffer[MAX_LENGTH] = { 0 };
-	FILE fp = NULL;
+	FILE* fp = NULL;
 	fp = fopen("filename.txt", "r");
 	fgets(fp, buffer, MAX_LENGTH);
 
