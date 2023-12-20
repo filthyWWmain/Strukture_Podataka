@@ -1,0 +1,5 @@
+﻿  Source.c
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_6_zadatak\Strukture_6_zadatak\Source.c(45,19): warning C4013: 'strcmp' undefined; assuming extern returning int
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_6_zadatak\Strukture_6_zadatak\Source.c(154,9): warning C4033: 'levelOrder' must return a value
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_6_zadatak\Strukture_6_zadatak\Source.c(173): warning C4715: 'levelOrder': not all control paths return a value
+  Strukture_6_zadatak.vcxproj -> C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_6_zadatak\Debug\Strukture_6_zadatak.exe

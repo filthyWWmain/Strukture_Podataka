@@ -1,0 +1,5 @@
+﻿  Source.c
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_5_zadatak\Strukture_5_zadatak\Source.c(31,9): warning C4068: unknown pragma 'funkicje'
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_5_zadatak\Strukture_5_zadatak\Source.c(42,9): warning C4068: unknown pragma 'end_funkcije'
+C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_5_zadatak\Strukture_5_zadatak\Source.c(288): warning C4716: 'ispis_dice': must return a value
+  Strukture_5_zadatak.vcxproj -> C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_5_zadatak\Debug\Strukture_5_zadatak.exe
