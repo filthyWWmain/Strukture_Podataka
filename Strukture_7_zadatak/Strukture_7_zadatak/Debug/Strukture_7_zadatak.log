@@ -1,4 +1,0 @@
-﻿  Source.c
-C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_7_zadatak\Strukture_7_zadatak\Source.c(207,9): warning C4033: 'levelOrder' must return a value
-C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_7_zadatak\Strukture_7_zadatak\Source.c(226): warning C4715: 'levelOrder': not all control paths return a value
-  Strukture_7_zadatak.vcxproj -> C:\Users\MSGW FILIGHT\Desktop\Danijel_Josip\Strukture_Podataka\Strukture_7_zadatak\Debug\Strukture_7_zadatak.exe
