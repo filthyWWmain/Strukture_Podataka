@@ -35,8 +35,8 @@ Position search(Position root, int value);
 Position deleteNode(Position root, int value);
 int replace(Position root);
 int random();
-int print_in_file(int value);
-int inorder_file(Position root);
+int print_in_file(Position root, char* filename);
+int inorder_file(Position root, FILE *fp);
 
 int main() {
 
@@ -46,7 +46,7 @@ int main() {
     //Napomena nisan minja insert da su desno manja dica a livo veca nego san ostavia kako je bilo u proslon zadatku
     int input, i = 0;
     printf("\nNuesite 1 za replace ili 2 za random unos brojeva\n");
-    scanf(" %d",&input);
+    scanf(" %d", &input);
     if (input == 1) {
         root = insert(root, 2);
         insert(root, 5);
@@ -60,21 +60,23 @@ int main() {
         insert(root, 7);
 
         printf("\n Nakon insert funkcije: \n");
-        levelOrder(root);
-
+        inorder(root);
+        print_in_file(root, "file.txt");
         replace(root);
         printf("\n Nakon replace funkcije: \n");
-        levelOrder(root);
+
+        inorder(root);
+        print_in_file(root,"file2.txt");
     }
-    else if(input == 2) {
-            root = insert(root, random());
-            while(i < 10) {
-                insert(root, random());
-                i++;
-          }
-            inorder_file(root);
+    else if (input == 2) {
+        root = insert(root, random());
+        while (i < 10) {
+            insert(root, random());
+            i++;
+        }
+        
     }
-   
+
 
     ///***************************************
     /*while (1) {
@@ -280,29 +282,34 @@ int replace(Position root) {
 
     //Moramo je spremiti jer poslje na njeno misto stavljano zbroj dice pa da ne izgubimo koja je vrijednost tu -Zato mora biti ova linija prije sljedece
     int current_node_value = root->value;
-    root->value =Sum_right_children + Sum_left_children;
+    root->value = Sum_right_children + Sum_left_children;
 
     // Return the sum of the node's value and the sum of its children
-    return current_node_value + Sum_right_children + Sum_left_children;
+    return current_node_value + root->value;
 }
 
 int random() {
     return (rand() % (90 - 10 + 1)) + 10;// +1 da bi ukljucili i 90
 }
-
-int print_in_file(int value) {
+// PITAJ ZA FILE POINTER STO SE SALJE U DRUGU FUNKCIJU!!!
+int print_in_file(Position root,char* filename) {
     FILE* fp = NULL;
-    fp = fopen("file.txt", "w");
-    fprintf(fp,"%d",value);
-    fclose(fp);
-    return EXIT_SUCCESS;
+    fp = fopen(filename, "w");
+    if (fp == NULL) {
+        return EXIT_FAILURE;
+    }
+    else {
+        inorder_file(root, fp);
+        fclose(fp);
+        return EXIT_SUCCESS;
+    }
 }
 
-int inorder_file(Position root) {
+int inorder_file(Position root, FILE *fp) {
     if (root) {
-        inorder(root->left);
-        print_in_file(root->value);
-        inorder(root->right);
+        inorder_file(root->left, fp);
+        fprintf(fp, "\n%d", root->value);
+        inorder_file(root->right, fp);
     }
     return EXIT_SUCCESS;
 }
