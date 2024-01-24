@@ -1,0 +1,4 @@
+Zagreb, 555000
+Split, 255000
+Zadar_je_samo_jedan, 987000
+Dubrovnik, 222000 
