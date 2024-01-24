@@ -36,17 +36,17 @@ struct _country;
 typedef struct _country* countryP;
 
 typedef struct _country {
-	char* name[MAX_LENGHT];
+    char* name[MAX_LENGHT];
     cityP first_city;
-	countryP next;
+    countryP next;
 }country;
 
 int readcountry(country*);
-countryP create_country(countryP, char*);
-cityP read_city(cityP, char* );
-cityP create_city ( char*, int);
+countryP create_country(char*);
+cityP read_city(cityP, char*);
+cityP create_city(char*, int);
 cityP insert_sorted_city(cityP, cityP);
-int compare_city( cityP, cityP);
+int compare_city(cityP, cityP);
 int insert_country(countryP, countryP);
 int print_country(countryP);
 cityP print_city(cityP, int);
@@ -54,36 +54,57 @@ int query(countryP);
 
 int main() {
 
-    country head = { .name = {0}, .next = NULL, .first_city = { .population = 0, .name = {0}, .left = NULL, .right = NULL } };
+    country head = { .name = {"head_name"}, .next = NULL, .first_city = NULL };
     char* country_name = { 0 };
     readcountry(&head);
 
     print_country(head.next);
-    
+
     query(head.next);
 
     return 0;
 }
 
-int readcountry(country *head){
+int readcountry(country* head) {
     FILE* fp = NULL;
     char* countryname[MAX_LENGHT] = { 0 };
     char* filename[MAX_LENGHT] = { 0 };
-    
+
     fp = fopen("drzave.txt", "r");
-    if(fp == NULL){
+    if (fp == NULL) {
+        printf("\nfile_not_fonud");
         return EXIT_FAILURE;
     }
-    while(fscanf(fp," %s, %s", countryname, filename ) != EOF) {
-        countryP new_country = create_country(head, countryname);
+    while (fscanf(fp, "%s , %s", countryname, filename) != EOF) {
+        countryP new_country = create_country(countryname);
+
         new_country->first_city = read_city(new_country->first_city, filename);
+
         insert_country(head, new_country);
 
     }
     return 0;
 }
 
-countryP create_country(countryP head, char* name) {
+int insert_country(countryP head, countryP new_country) {
+    countryP current = head;
+    if (head->next == NULL) {
+
+        head->next = new_country;
+
+        return EXIT_SUCCESS;
+    }
+
+    while (current->next != NULL && strcmp(current->next->name, new_country->name) > 0) {
+
+        current = current->next;
+    }
+    new_country->next = current->next;
+    current->next = new_country;
+    return EXIT_SUCCESS;
+}
+
+countryP create_country(char* name) {
     countryP new_country = NULL;
     new_country = (countryP)malloc(sizeof(country));
     if (new_country == NULL) {
@@ -99,19 +120,22 @@ countryP create_country(countryP head, char* name) {
 
 cityP read_city(cityP root, char* filename) {
 
-    FILE fp = NULL;
+    FILE* fp = NULL;
     char* city_name[MAX_LENGHT] = { 0 };
     int population = 0;
 
-    fp = fopen("filename", "r");
+    fp = fopen(filename, "r");
     if (fp == NULL) {
-        printf("file not found!_city");
+        printf("\nfile not found! %s");
         return EXIT_FAILURE;
     }
-
-    while (fscanf(fp, "%s, %d ", city_name , &population ) != EOF) {
+    // Pitaj sa  zarezon razlika xyz, xyz!
+    while (fscanf(fp, "%s , %d ", city_name, &population) != EOF) {
         cityP new_city = create_city(city_name, population);
-        root = insert_sorted_city(root,new_city);
+
+
+        root = insert_sorted_city(root, new_city);
+
     }
 
 
@@ -123,7 +147,10 @@ cityP create_city(char* city_name, int population) {
     cityP new_city = NULL;
 
     new_city = (cityP)malloc(sizeof(city));
-
+    if (new_city == NULL) {
+        printf("malloc fail_city");
+        return EXIT_FAILURE;
+    }
     strcpy(new_city->name, city_name);
     new_city->population = population;
     new_city->left = NULL;
@@ -134,25 +161,30 @@ cityP create_city(char* city_name, int population) {
 
 cityP insert_sorted_city(cityP root, cityP new_city) {
     if (root == NULL) {
+
         return new_city;
     }
+
     if (compare_city(root, new_city) == FIRST_IS_BIGGER) {
-        root->left = inser_sorted_city(root->left,new_city)
+
+        root->left = insert_sorted_city(root->left, new_city);
     }
     else if (compare_city(root, new_city) == SECOND_IS_BIGGER) {
-        root->right = insert_sorted_city(root->right,new_city);
+
+        root->right = insert_sorted_city(root->right, new_city);
     }
+    return root;
 }
 
-int compare_city( cityP first, cityP second) {
+int compare_city(cityP first, cityP second) {
     if (first->population == second->population) {
-        if (strcmp(first->name, second->name) > 0) {
+        if (strcmp(first->name, second->name) < 0) {
             return FIRST_IS_BIGGER;
         }
         else {
             return SECOND_IS_BIGGER;
         }
-        
+
     }
     else {
         if (first->population > second->population) {
@@ -163,50 +195,43 @@ int compare_city( cityP first, cityP second) {
         }
     }
 }
-int insert_country(countryP head, countryP new_country) {
-    while (strcmp(head->name, new_country->name) > 0 && head->next != NULL) {
-        head = head->next;
-    }
-    head->next = new_country;
-    return EXIT_SUCCESS;
-}
+
 
 int print_country(countryP current) {
     while (current != NULL) {
         printf("\nDrzava je: %s", current->name);
-        print_city(current->first_city,0);
+        print_city(current->first_city, 0);
         current = current->next;
     }
     return EXIT_SUCCESS;
 }
-cityP print_city(cityP root,int population_minimum) {
-    if(root != NULL){
+cityP print_city(cityP root, int population_minimum) {
+    if (root != NULL) {
         if (root->population > population_minimum) {
-            printf("Grad je : %s sa populacijom %d:", root->name, root->population);
+            printf("\nGrad je : %s sa populacijom : %d", root->name, root->population);
         }
-        print_city(root->left,population_minimum);
-        print_city(root->right,population_minimum);
+        print_city(root->left, population_minimum);
+        print_city(root->right, population_minimum);
     }
 }
 int query(countryP current) {
-    char* country_name = { 0 };
-    int Required_population= 0;
+    char* country_name[MAX_LENGHT] = { 0 };
+    int Required_population = 0;
 
-    printf("\nUnesite ime drzave(Hrvatska/Italija/Engleska)");
+    printf("\nUnesite ime drzave(Hrvatska/Italija/Engleska): ");
     scanf(" %s", country_name);
     printf("\n unesitite minimalni broj ljudi koji grad mora imati: ");
-    scanf("%d",&Required_population);
+    scanf("%d", &Required_population);
 
-    while (strcmp(current->name, country_name) != 0 || current != NULL) {
+    while (current == NULL || strcmp(current->name, country_name) != 0) {
         current = current->next;
     }
     if (current == NULL) {
         printf("U listi nema te drzave");
-            return EXIT_SUCCESS;
+        return EXIT_SUCCESS;
     }
     else {
         print_city(current->first_city, Required_population);
 
-        }
     }
 }
