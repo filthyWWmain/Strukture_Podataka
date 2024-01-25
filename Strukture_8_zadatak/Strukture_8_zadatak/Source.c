@@ -16,6 +16,7 @@
 #define EXIT_FAILURE -1
 #define FIRST_IS_BIGGER 1
 #define SECOND_IS_BIGGER 2
+#define HASH_TABLE_SIZE 11
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,7 +42,15 @@ typedef struct _country {
     countryP next;
 }country;
 
-int readcountry(country*);
+typedef struct _hashtable {
+    countryP list[HASH_TABLE_SIZE];
+
+}hashtable;
+typedef hashtable* hashtableP;
+
+
+
+int readcountry(country*, hashtableP);
 countryP create_country(char*);
 cityP read_city(cityP, char*);
 cityP create_city(char*, int);
@@ -51,21 +60,102 @@ int insert_country(countryP, countryP);
 int print_country(countryP);
 cityP print_city(cityP, int);
 int query(countryP);
+hashtableP create_hastable();
+int calculate_hash_value(char*);
+int insert_country_in_hash(hashtableP, countryP);
+int search_hash_table(hashtableP);
+int delete_country(countryP);
+cityP delete_tree(cityP);
 
 int main() {
 
     country head = { .name = {"head_name"}, .next = NULL, .first_city = NULL };
+    hashtableP hash_table = NULL;
+    hash_table = create_hastable();
     char* country_name = { 0 };
-    readcountry(&head);
 
-    print_country(head.next);
 
-    query(head.next);
+    readcountry(&head, hash_table);
+
+    //print_country(head.next);
+
+    //query(head.next);
+    search_hash_table(hash_table);
+
+    delete_country(head.next);
 
     return 0;
 }
 
-int readcountry(country* head) {
+int search_hash_table(hashtableP hash_table) {
+
+    char countryname[MAX_LENGHT] = { 0 };
+    countryP searched_country = NULL;
+
+    pritnf("Input country name to search in hashtable: ");
+    scanf(" %s", countryname);
+
+    searched_country = hash_table->list[calculate_hash_value(countryname)];
+
+    while (searched_country = !NULL && strcmp(searched_country->name, countryname) != 0) {
+        searched_country = searched_country->next;
+    }
+
+    if (searched_country == NULL) {
+        printf("Country doesn't exist");
+        return EXIT_FAILURE;
+    }
+    else {
+        printf("country found in hash table : %s", searched_country->name);
+    }
+    return EXIT_SUCCESS;
+
+}
+int insert_country_in_hash(hashtableP hashtable, countryP new_country) {
+
+    int hash_table_value = 0;
+
+    hash_table_value = calculate_hash_value(new_country->name);
+
+    if (hashtable->list[hash_table_value] != NULL) {
+        hashtable->list[hash_table_value] = new_country;
+    }
+    else {
+        new_country->next = hashtable->list[hash_table_value];
+        hashtable->list[hash_table_value] = new_country;
+    }
+    return 0;
+}
+int calculate_hash_value(char* countr_name) {
+    int hash_vaule = 0;
+    int i = 0;
+    while (countr_name[i] != '\0' && i < 5) {
+        hash_vaule = hash_vaule + (unsigned int)countr_name[i];
+        i;
+    }
+    return hash_vaule % HASH_TABLE_SIZE;
+}
+
+
+
+hashtableP create_hastable() {
+    hashtableP hashtable = NULL;
+    hashtable = (hashtableP)malloc(sizeof(hashtable));
+
+    if (hashtable == NULL) {
+        printf("memory allocation fail at_hashtable");
+        return NULL;
+    }
+    for (int i = 0; i < HASH_TABLE_SIZE; i++) {
+        hashtable->list[i] = NULL;
+    }
+
+    return hashtable;;
+}
+
+
+
+int readcountry(country* head, hashtableP hash_table) {
     FILE* fp = NULL;
     char* countryname[MAX_LENGHT] = { 0 };
     char* filename[MAX_LENGHT] = { 0 };
@@ -76,11 +166,15 @@ int readcountry(country* head) {
         return EXIT_FAILURE;
     }
     while (fscanf(fp, "%s , %s", countryname, filename) != EOF) {
+
         countryP new_country = create_country(countryname);
-
         new_country->first_city = read_city(new_country->first_city, filename);
-
         insert_country(head, new_country);
+        //nova drzava za hash
+        countryP new_country_hash = create_country(countryname);
+        new_country_hash->first_city = read_city(new_country->first_city, filename);
+
+        insert_country_in_hash(hash_table, new_country_hash);
 
     }
     return 0;
@@ -129,7 +223,7 @@ cityP read_city(cityP root, char* filename) {
         printf("\nfile not found! %s");
         return EXIT_FAILURE;
     }
-    // Pitaj sa  zarezon razlika xyz, xyz!
+
     while (fscanf(fp, "%s , %d ", city_name, &population) != EOF) {
         cityP new_city = create_city(city_name, population);
 
@@ -234,4 +328,25 @@ int query(countryP current) {
         print_city(current->first_city, Required_population);
 
     }
+}
+int delete_country(countryP head) {
+    countryP Temp = NULL;
+    countryP current = head;
+    while (current != NULL) {
+        Temp = current;
+        current = current->next;
+        delete_tree(Temp->first_city);
+        free(Temp);
+    }
+    return EXIT_SUCCESS;
+}
+
+cityP delete_tree(cityP root) {
+    if (root->left != NULL) {
+        delete_tree(root->left);
+    }
+    if (root->right != NULL) {
+        delete_tree(root->right);
+    }
+    free(root);
 }

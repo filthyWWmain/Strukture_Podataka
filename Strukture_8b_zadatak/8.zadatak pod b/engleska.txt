@@ -1,0 +1,4 @@
+London , 500000
+Manchester , 111000
+Oxford , 255000
+Liverpool , 345000

@@ -1,0 +1,4 @@
+Milan , 456000
+Torino , 345000
+Rim , 234000
+Venecija , 134000
