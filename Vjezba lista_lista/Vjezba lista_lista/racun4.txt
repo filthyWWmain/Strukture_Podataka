@@ -1,0 +1,12 @@
+1999-3-5
+sljiva 4 4
+ananas 4 3
+grejp 4 2
+brasno 12 3
+duvan 23 32
+kakao 9 23
+zmije 302 3
+trisnja 32 31
+lovor 3 12
+eukaliptus 9 31
+frenje 82 11

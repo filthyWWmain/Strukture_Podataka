@@ -1,0 +1,4 @@
+1999-1-3
+sljiva 2 2
+breskva 3 4
+kruv 2 3

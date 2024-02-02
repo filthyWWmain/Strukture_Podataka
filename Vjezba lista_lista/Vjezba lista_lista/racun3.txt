@@ -1,0 +1,4 @@
+2001-02-01
+jabuka 1 1
+krucka 1 1
+sljiva 1 2
